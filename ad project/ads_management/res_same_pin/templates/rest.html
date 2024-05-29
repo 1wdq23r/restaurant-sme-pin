@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ restaurant.name }}</title>
+</head>
+<body>
+    <h1>{{ restaurant.name }}</h1>
+    <p>{{ restaurant.address }}</p>
+    <p>Pin Code: {{ restaurant.pincode }}</p>
+
+    <h2>Other restaurants in the same area:</h2>
+    <ul>
+    {% for similar_restaurant in similar_restaurants %}
+        <li>{{ similar_restaurant.name }} - {{ similar_restaurant.address }}</li>
+    {% empty %}
+        <li>No other restaurants found in the same area.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
